@@ -1,0 +1,14 @@
+.next-button{
+    background-color: #FE7F2E;
+    width: fit-content;
+    color: #FFFFFF;
+    padding: 30px 40px;
+    border-radius: 20px;
+    font-size: 40px;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background: #ffa161;
+}

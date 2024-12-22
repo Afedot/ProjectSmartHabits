@@ -1,59 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор привычек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #87C38F, #87C38F);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2d572c;
+        }
+
+        .habit {
+            margin-bottom: 20px; /* Увеличиваем расстояние между привычками */
+            display: flex;
+            align-items: center;
+            padding: 15px; /* Добавляем внутренние отступы для увеличения размера */
+            background-color: #f9f9f9; /* Цвет фона */
+            border-radius: 10px; /* Скругленные углы */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Легкая тень для объема */
+            font-size: 20px; /* Увеличиваем размер шрифта */
+        }
+
+        .habit input[type="checkbox"] {
+            width: 25px; /* Увеличиваем чекбокс */
+            height: 25px;
+            margin-right: 15px; /* Отступ от чекбокса до текста */
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff5733;
+        }
+    </style>
 </head>
 <body>
- <div style="width: 100%; height: 100%; position: relative; background: #FCFFFC">
-    <div style="width: 108px; height: 116px; left: 1312px; top: 14px; position: absolute">
-        <div style="width: 63px; height: 116px; left: 0px; top: 0px; position: absolute; color: black; font-size: 96px; font-family: Gill Sans Ultra Bold Condensed; font-weight: 400; word-wrap: break-word">S</div>
-        <div style="width: 66px; height: 107px; left: 42px; top: 0px; position: absolute; color: black; font-size: 96px; font-family: Gill Sans Ultra Bold Condensed; font-weight: 400; word-wrap: break-word">H</div>
-        <div style="width: 9.49px; height: 91px; left: 48.40px; top: 17px; position: absolute; transform: rotate(14.25deg); transform-origin: 0 0; background: white"></div>
-        <div style="width: 8.15px; height: 31px; left: 38.44px; top: 65.02px; position: absolute; transform: rotate(1.05deg); transform-origin: 0 0; background: white"></div>
+<div class="container">
+    <div class="header">Выбери привычки, которые хочешь себе привить</div>
+
+    <div class="habit">
+        <input type="checkbox" id="habit1">
+        <label for="habit1">Вставать и ложиться в одно и то же время</label>
     </div>
-    <div style="width: 1367px; height: 851px; left: 38px; top: 141px; position: absolute; background: #87C38F; border-radius: 35px"></div>
-    <div style="width: 785px; height: 74px; left: 63px; top: 52px; position: absolute; color: black; font-size: 65px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">Ваши привычки</div>
-    <div style="width: 433px; height: 87px; left: 63px; top: 216px; position: absolute; color: black; font-size: 40px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">#Привычки из базы данных</div>
-    <div style="width: 433px; height: 87px; left: 63px; top: 340px; position: absolute; color: black; font-size: 40px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">#Привычки из базы данных</div>
-    <div style="width: 433px; height: 87px; left: 63px; top: 464px; position: absolute; color: black; font-size: 40px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">#Привычки из базы данных</div>
-    <div style="width: 433px; height: 87px; left: 63px; top: 588px; position: absolute; color: black; font-size: 40px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">#Привычки из базы данных</div>
-    <div style="width: 743px; height: 27px; left: 550px; top: 189px; position: absolute">
-        <div style="width: 89px; height: 27px; left: 136px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">вторник</div>
-        <div style="width: 53px; height: 27px; left: 253px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">среда</div>
-        <div style="width: 114px; height: 27px; left: 629px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">воскресенье</div>
-        <div style="width: 75px; height: 27px; left: 544px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">суббота</div>
-        <div style="width: 75px; height: 27px; left: 440px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">пятница</div>
-        <div style="width: 69px; height: 27px; left: 342px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">четверг</div>
-        <div style="width: 121px; height: 27px; left: 0px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Franklin Gothic Medium; font-weight: 400; word-wrap: break-word">Понедельник</div>
+    <div class="habit">
+        <input type="checkbox" id="habit2">
+        <label for="habit2">Пить воду</label>
     </div>
-    <div style="width: 60px; height: 60px; left: 581px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 692px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 800px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 897px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 998px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1102px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1206px; top: 222px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 581px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 692px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 800px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 897px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 998px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1102px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1206px; top: 346px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 581px; top: 471px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 692px; top: 471px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 800px; top: 471px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 899px; top: 473px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 998px; top: 471px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1102px; top: 471px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1206px; top: 471px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 581px; top: 599px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 692px; top: 599px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 800px; top: 599px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 901px; top: 599px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 998px; top: 599px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1102px; top: 599px; position: absolute; background: #D9D9D9"></div>
-    <div style="width: 60px; height: 60px; left: 1206px; top: 599px; position: absolute; background: #D9D9D9"></div>
+    <div class="habit">
+        <input type="checkbox" id="habit3">
+        <label for="habit3">Читать каждый день</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit4">
+        <label for="habit4">Откладывать деньги</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit5">
+        <label for="habit5">Не есть сахар</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit6">
+        <label for="habit6">Делать зарядку</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit7">
+        <label for="habit7">Откладывать телефон за час до сна</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit8">
+        <label for="habit8">Есть полезную еду</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit9">
+        <label for="habit9">Держать осанку</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit10">
+        <label for="habit10">Заниматься спортом</label>
+    </div>
+    <div class="habit">
+        <input type="checkbox" id="habit11">
+        <label for="habit11">Много ходить</label>
+    </div>
+
+    <div class="button-container">
+        <button class="button" onclick="saveSelectedHabits()">Продолжить</button>
+    </div>
+</div>
+
+<script>
+    function saveSelectedHabits() {
+        const checkboxes = document.querySelectorAll('.habit input[type="checkbox"]');
+        const selectedHabits = [];
+
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                // Сохраняем текст из метки <label> рядом с чекбоксом
+                selectedHabits.push(checkbox.nextElementSibling.textContent.trim());
+            }
+        });
+
+        // Сохраняем выбранные привычки в localStorage
+        localStorage.setItem('selectedHabits', JSON.stringify(selectedHabits));
+
+        // Переходим на вторую страницу (page3.html)
+        window.location.href = 'page3';
+    }
+</script>
 </body>
 </html>

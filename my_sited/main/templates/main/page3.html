@@ -3,161 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выбор привычек</title>
+    <title>Ваши привычки</title>
     <style>
-        html, body {
-            height: 100%;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #87C38F, #87C38F);
-            color: #333;
+            background-color: #87C38F;
         }
 
         .container {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            padding: 50px;
-            box-sizing: border-box;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
             max-width: 1100px;
-            margin: auto;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .header {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 30px;
-            text-align: left;
-            color: #2d572c;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .habit {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
-            width: 100%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            font-size: 20px;
+            color: #2d572c;
+            text-align: center;
         }
 
-        .habit input[type="checkbox"] {
-            width: 25px;
-            height: 25px;
-            margin-right: 15px;
+        .habit-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f4f4f4;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .habit label {
-            font-size: 20px;
-            color: #333;
+        .habit-block input[type="time"] {
+            margin-right: 10px;
         }
 
-        .button-container {
-            text-align: left;
-            margin-top: 30px;
+        .habit-text {
+            font-size: 18px;
+            flex: 1;
         }
 
-        .button {
+        .save-button {
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .save-button:hover {
+            background-color: #ff5733;
+        }
+
+        .continue-button {
+            display: block;
+            margin: 30px auto;
             background-color: #ff7043;
             color: #fff;
+            padding: 12px 25px;
+            font-size: 18px;
             border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .button:hover {
-            background-color: #ff5733;
-            transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .footer {
-            margin-top: 30px;
+            transition: background-color 0.3s;
             text-align: center;
-            font-size: 16px;
-            color: #555;
-            opacity: 0.8;
+        }
+
+        .continue-button:hover {
+            background-color: #ff5733;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="header">Выбери привычки, которые хочешь себе привить</div>
+    <div class="header">Ваши привычки</div>
 
-    <div class="habit">
-        <input type="checkbox" id="habit1">
-        <label for="habit1">вставать и ложиться в одно и то же время</label>
+    <div id="habit-list">
+        <!-- Блоки привычек будут добавляться динамически -->
     </div>
 
-    <div class="habit">
-        <input type="checkbox" id="habit2">
-        <label for="habit2">пить воду</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit3">
-        <label for="habit3">читать каждый день</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit4">
-        <label for="habit4">откладывать деньги</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit5">
-        <label for="habit5">не есть сахар</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit6">
-        <label for="habit6">делать зарядку</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit7">
-        <label for="habit7">откладывать телефон за час до сна</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit8">
-        <label for="habit8">есть полезную еду</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit9">
-        <label for="habit9">держать осанку</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit10">
-        <label for="habit10">заниматься спортом</label>
-    </div>
-
-    <div class="habit">
-        <input type="checkbox" id="habit11">
-        <label for="habit11">много ходить</label>
-    </div>
-
-    <div class="button-container">
-        <button class="button">Продолжить</button>
-    </div>
-
-    <div class="footer">Создано для улучшения привычек и достижения целей</div>
+    <button class="continue-button" onclick="goToPage3()">Выбрать ещё привычек</button>
 </div>
+
+<script>
+    // Получаем привычки из локального хранилища
+    const selectedHabits = JSON.parse(localStorage.getItem('selectedHabits')) || [];
+    const savedTimes = JSON.parse(localStorage.getItem('savedTimes')) || {}; // Восстанавливаем сохраненные времена
+    const habitListContainer = document.getElementById('habit-list');
+
+    // Генерация блока для привычек
+    selectedHabits.forEach((habit, index) => {
+        const habitBlock = document.createElement('div');
+        habitBlock.className = 'habit-block';
+
+        const savedTime = savedTimes[index] || ''; // Восстанавливаем сохраненное время для привычки
+
+        habitBlock.innerHTML = `
+                <span class="habit-text">${habit}</span>
+                <input type="time" id="time-${index}" value="${savedTime}">
+                <button class="save-button" onclick="saveTime(${index})">Сохранить время</button>
+            `;
+        habitListContainer.appendChild(habitBlock);
+    });
+
+    // Функция для сохранения времени
+    function saveTime(index) {
+        const timeInput = document.getElementById(`time-${index}`);
+        savedTimes[index] = timeInput.value; // Сохраняем время в объект
+        localStorage.setItem('savedTimes', JSON.stringify(savedTimes)); // Обновляем localStorage
+        alert(`Время для привычки "${selectedHabits[index]}" сохранено: ${timeInput.value}`);
+    }
+
+    // Переход на следующую страницу
+    function goToPage3() {
+        window.location.href = 'page2';
+    }
+</script>
 </body>
 </html>

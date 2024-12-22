@@ -1,8 +1,55 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import LoginForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.http import JsonResponse
+import json
 
 
-# Create your views here.
+def register(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = data.get('username')
+        email = data.get('email')
+        password = data.get('password')
+
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({'success': False, 'error': 'Имя пользователя уже занято'})
+        if User.objects.filter(email=email).exists():
+            return JsonResponse({'success': False, 'error': 'Email уже используется'})
+
+        # Создать нового пользователя
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+        return JsonResponse({'success': True})
+
+    return JsonResponse({'success': False, 'error': 'Неверный метод запроса'}, status=400)
+
+
+def index(request):
+    return render(request, 'main/index.html')
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('index')  # Перенаправление после успешного входа
+        else:
+            return HttpResponse("Неверные имя пользователя или пароль", status=401)
+    return redirect('index')
+
+def home_view(request):
+    if 'user_id' not in request.session:
+        return redirect('login')  # Перенаправление на страницу авторизации
+    return render(request, 'home.html')
+
 
 def index(request):
     return render(request, 'main/index.html')
